@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CardContainer from "./component/cardContainer/CardContainer";
+import Head from "./component/header/Head";
+import HeroSection from "./component/heroSection/HeroSection";
+import MyCarousel from "./component/myCrousael/MyCarousel";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [dataTop, setDataTop] = useState([]);
+  const [dataNew, setDataNew] = useState([]);
+  useEffect(() => {
+    fetchData("https://qtify-backend-labs.crio.do/albums/new");
+  }, []);
+
+  async function fetchData() {
+    let responce = await fetch("https://qtify-backend-labs.crio.do/albums/top");
+    responce = await responce.json();
+    console.log(responce, "top");
+    setDataTop(responce);
+    responce = await fetch("https://qtify-backend-labs.crio.do/albums/new");
+    responce = await responce.json();
+    console.log(responce, "new");
+    setDataNew(responce);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Head />
+      <HeroSection />
+
+      <CardContainer text={"Top"} data={dataTop} />
+      <CardContainer text={"New"} data={dataNew} />
+    </>
   );
 }
 

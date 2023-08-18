@@ -1,0 +1,33 @@
+.custom-carousel-container {
+  width: 100%;
+  max-width: 100%; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+}
+
+.custom-carousel-container .carousel-root {
+  padding: 0;
+}
+
+.custom-carousel-container .carousel {
+  margin: 0 auto;
+}
+
+.custom-carousel-container .carousel .slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-carousel-container .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-carousel-container .legend {
+  text-align: center;
+}

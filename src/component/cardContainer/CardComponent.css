@@ -1,0 +1,17 @@
+.legend {
+  background-color: white;
+  padding: 0 0.5em;
+}
+
+.legend p {
+  font-size: 0.8em;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+.card-footer {
+  color: white;
+}

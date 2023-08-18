@@ -1,0 +1,19 @@
+.heroSection {
+  width: 1440px;
+  height: 220px;
+  flex-shrink: 0;
+  background: #121212;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
