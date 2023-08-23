@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./MyCarousel.css"; // Import your custom CSS for styling
 
-const MyCarousel = ({ data }) => {
+const MyCarousel = ({ data, text, setSelecteID }) => {
   return (
     <div className="custom-carousel-container">
       <Carousel
@@ -20,9 +20,16 @@ const MyCarousel = ({ data }) => {
         selectedItem={2}
       >
         {data.map((item) => (
-          <div>
-            <img src={item.image} alt="Image 1" />
-            <p className="legend">{item.slug}</p>
+          <div
+            className="curoasalBody
+            "
+            onClick={() => {
+              setSelecteID(item.id);
+            }}
+            key={item.id}
+          >
+            <img src={item.image} alt="SongImage" />
+            <p className="legend">{item.slug ? item.slug : item.genre.label}</p>
           </div>
         ))}
       </Carousel>

@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import MyCarousel from "../myCrousael/MyCarousel";
 import CardComponent from "./CardComponent";
-const CardContainer = ({ data, text }) => {
+const CardContainer = ({ data, text, setSelecteID }) => {
   const [isGridView, setIsGridView] = useState(false);
 
   const toggleView = () => {
@@ -12,12 +12,16 @@ const CardContainer = ({ data, text }) => {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h3 style={{ color: "white" }}>{text} Albums</h3>
-        <Button onClick={toggleView} style={{ color: "green" }}>
-          {isGridView ? "Collapse" : "Show All"}
-        </Button>
-      </div>
+      {text ? (
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h3 style={{ color: "white" }}>{text} Albums</h3>
+          <Button onClick={toggleView} style={{ color: "green" }}>
+            {isGridView ? "Collapse" : "Show All"}
+          </Button>
+        </div>
+      ) : (
+        ""
+      )}
       <div style={{ marginTop: "0px", width: "100%" }}>
         {isGridView ? (
           <Grid
@@ -35,7 +39,7 @@ const CardContainer = ({ data, text }) => {
                 key={index}
                 xs={4}
                 sm={3}
-                md={1}
+                md={1.5}
                 style={{ width: "100%" }}
               >
                 <CardComponent content={card} />
@@ -44,7 +48,7 @@ const CardContainer = ({ data, text }) => {
           </Grid>
         ) : (
           <div>
-            <MyCarousel data={data} />
+            <MyCarousel data={data} text={text} setSelecteID={setSelecteID} />
           </div>
         )}
       </div>

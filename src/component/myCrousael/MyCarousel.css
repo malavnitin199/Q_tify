@@ -31,3 +31,7 @@
 .custom-carousel-container .legend {
   text-align: center;
 }
+
+.curoasalBody {
+  cursor: pointer;
+}

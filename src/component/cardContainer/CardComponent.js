@@ -10,7 +10,7 @@ const CardComponent = ({ content }) => {
           <img
             src={content.image}
             alt="Image 1"
-            style={{ height: "130px", width: "100%" }}
+            style={{ height: "130px", width: "100%", objectFit: "cover" }}
           />
           {/* <p className="legend">{content.slug}</p> */}
           <div className="legend">
