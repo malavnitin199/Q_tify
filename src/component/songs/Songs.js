@@ -29,41 +29,52 @@ function Songs({ dataTop, selectedId, setSelecteID }) {
   return (
     <>
       <h3>Songs</h3>
-      <div className="ButtonCointaner">
+      <div className="cointaierHead">
+        <div className="ButtonCointaner">
+          <Button
+            onClick={handleGernalButton}
+            value="All"
+            style={getButtonStyle("All")}
+          >
+            All
+          </Button>
+          <Button
+            onClick={handleGernalButton}
+            value="Rock"
+            style={getButtonStyle("Rock")}
+          >
+            Rock
+          </Button>
+          <Button
+            onClick={handleGernalButton}
+            value="Pop"
+            style={getButtonStyle("Pop")}
+          >
+            Pop
+          </Button>
+          <Button
+            onClick={handleGernalButton}
+            value="Jazz"
+            style={getButtonStyle("Jazz")}
+          >
+            Jazz
+          </Button>
+          <Button
+            onClick={handleGernalButton}
+            value="Blues"
+            style={getButtonStyle("Blues")}
+          >
+            Blues
+          </Button>
+        </div>
         <Button
-          onClick={handleGernalButton}
-          value="All"
-          style={getButtonStyle("All")}
+          style={{
+            marginBottom: " 10px",
+            backgroundColor: "#b327bb",
+            color: "white",
+          }}
         >
-          All
-        </Button>
-        <Button
-          onClick={handleGernalButton}
-          value="Rock"
-          style={getButtonStyle("Rock")}
-        >
-          Rock
-        </Button>
-        <Button
-          onClick={handleGernalButton}
-          value="Pop"
-          style={getButtonStyle("Pop")}
-        >
-          Pop
-        </Button>
-        <Button
-          onClick={handleGernalButton}
-          value="Jazz"
-          style={getButtonStyle("Jazz")}
-        >
-          Jazz
-        </Button>
-        <Button
-          onClick={handleGernalButton}
-          value="Blues"
-          style={getButtonStyle("Blues")}
-        >
-          Blues
+          {selectedGernal} Music
         </Button>
       </div>
 

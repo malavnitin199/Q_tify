@@ -1,0 +1,18 @@
+.cointainer {
+  width: 600px;
+  border: 2px solid #20b720;
+  height: 222px;
+  margin-right: 60px;
+  border-top: none;
+  background-color: #000000;
+  border-radius: 7px;
+}
+.searchElement {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: 297px;
+}

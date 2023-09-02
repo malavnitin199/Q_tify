@@ -4,6 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./MyCarousel.css"; // Import your custom CSS for styling
 
 const MyCarousel = ({ data, text, setSelecteID }) => {
+  const handleSongClick = () => {
+    console.log("click to song");
+  };
   return (
     <div className="custom-carousel-container">
       <Carousel
@@ -24,7 +27,7 @@ const MyCarousel = ({ data, text, setSelecteID }) => {
             className="curoasalBody
             "
             onClick={() => {
-              setSelecteID(item.id);
+              text ? setSelecteID(item.id) : handleSongClick();
             }}
             key={item.id}
           >

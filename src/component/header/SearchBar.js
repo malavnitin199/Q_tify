@@ -5,7 +5,11 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function CustomizedInputBase() {
+export default function CustomizedInputBase({ SetText }) {
+  const handleChange = (e) => {
+    SetText(e.target.value);
+    console.log(e.target.value);
+  };
   return (
     <Paper
       component="form"
@@ -18,7 +22,12 @@ export default function CustomizedInputBase() {
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search on Qtify"
         inputProps={{ "aria-label": "search Songs on Qtify" }}
+        onChange={(e) => {
+          handleChange(e);
+        }}
+        // value={text}
       />
+
       <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
         <SearchIcon />
       </IconButton>
